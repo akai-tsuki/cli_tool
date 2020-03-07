@@ -8,8 +8,6 @@ sample cli tool
 VS Code Counter
 https://marketplace.visualstudio.com/items?itemName=uctakeoff.vscode-counter
 
-## Build
-
 
 ## Test and coverage
 
@@ -107,15 +105,13 @@ PS C:\desk\GitHub\cli_tool>
 
 ## Ref
 
-# Learn more:
-
-  https://github.com/kennethreitz/setup.py
+  https://github.com/kennethreitz/setup.py  
   https://python-packaging-user-guide-ja.readthedocs.io/ja/latest/distributing.html
 
 
-## Help
+## Help of setup.py
 
-python setup.py --help-commands
+`python setup.py --help-commands`
 
 ```
 PS C:\desk\GitHub\cli_tool> python setup.py --help-commands
