@@ -1,12 +1,18 @@
 # -*- coding: utf-8 -*-
 
-# from argparse import ArgumentParser
 from sample01 import Sample01
 import argparse
 
-# import logging
-# logging.basicConfig(level=logging.INFO)
-# logger = logging.getLogger(__name__)
+import os
+import logging
+import logging.config
+
+# logging.getLogger('cli_tool').addHandler(logging.NullHandler())
+
+logging_config_filename = 'logging.ini'
+
+if os.path.isfile(logging_config_filename):
+    logging.config.fileConfig(logging_config_filename)
 
 
 def getArg():
@@ -35,6 +41,7 @@ def main():
     print(arg_values.number)
 
     print('Start ---')
+    print("name:" + __name__)
 
     if arg_values.number is not None:
         sample_value = arg_values.number

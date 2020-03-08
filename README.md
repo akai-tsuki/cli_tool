@@ -11,7 +11,7 @@ https://marketplace.visualstudio.com/items?itemName=uctakeoff.vscode-counter
 
 ## Test and coverage
 
-- unittest
+### unittest
 
 ```
 PS C:\desk\GitHub\cli_tool> python -m unittest tests.test_sample01
@@ -23,7 +23,7 @@ OK
 PS C:\desk\GitHub\cli_tool>
 ```
 
-- coverage
+### coverage
 
 ```
 PS C:\desk\GitHub\cli_tool> coverage-2.7.exe run --source .\cli_tool\ -m unittest discover
@@ -43,12 +43,24 @@ TOTAL                     15      9    40%
 PS C:\desk\GitHub\cli_tool>
 ```
 
-- output xml file.
+output xml file.
 
 ```
 PS C:\desk\GitHub\cli_tool> coverage-2.7.exe xml
 ```
 
+### flake8
+
+execute flake8 command
+```
+PS C:\desk\GitHub\cli_tool> flake8.exe .\cli_tool\
+.\cli_tool\rest_client.py:4:1: E302 expected 2 blank lines, found 1
+.\cli_tool\rest_client.py:26:1: W391 blank line at end of file
+.\cli_tool\sample01.py:4:1: E302 expected 2 blank lines, found 1
+.\cli_tool\sample01.py:41:1: W391 blank line at end of file
+.\cli_tool\__init__.py:1:11: W292 no newline at end of file
+PS C:\desk\GitHub\cli_tool>
+```
 
 ## Run by python command
 
