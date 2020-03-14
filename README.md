@@ -1,5 +1,11 @@
+[![Maintainability](https://api.codeclimate.com/v1/badges/e6339a90f3ecab80960b/maintainability)](https://codeclimate.com/github/akai-tsuki/cli_tool/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/e6339a90f3ecab80960b/test_coverage)](https://codeclimate.com/github/akai-tsuki/cli_tool/test_coverage)
+
 # cli_tool
+
 sample cli tool
+
+
 
 ## Prepare
 
