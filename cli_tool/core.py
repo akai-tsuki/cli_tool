@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from sample01 import Sample01
+from cli_tool.sample01 import Sample01
 import argparse
 
 import os
