@@ -50,12 +50,8 @@ jobs:
             coverage run --source ./cli_tool/ -m unittest discover
             coverage xml
             ls -la
-          name: Coverage
-      - run:
-          command: |
-            coverage xml
-            ls -la
             ./cc-test-reporter after-build --exit-code $?
+          name: Coverage
       - persist_to_workspace:
           root: coverage_output
           paths:
