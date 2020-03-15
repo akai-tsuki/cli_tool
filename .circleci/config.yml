@@ -17,7 +17,7 @@ jobs:
       - run:
           command: |
             sudo pip install coverage
-            coverage run --source .\cli_tool\ -m unittest discover
+            coverage run --source .cli_tool -m unittest discover
           name: Coverage
 
 workflows:
