@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from rest_client_exception import RestClientException
+from cli_tool.rest_client_exception import RestClientException
 import logging
 
 

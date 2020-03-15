@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from rest_client import RestClient
+from cli_tool.rest_client import RestClient
 
 import logging
 
