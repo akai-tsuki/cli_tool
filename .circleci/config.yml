@@ -40,7 +40,7 @@ jobs:
             mkdir -p coverage_output
             export COVERAGE_FILE=coverage_output/.coverage.$CIRCLE_BUILD_NUM
             sudo pip install coverage
-            coverage run --source .cli_tool -m unittest discover
+            coverage run --source ./cli_tool/ -m unittest discover
           name: Coverage
       - persist_to_workspace:
           root: coverage_output
