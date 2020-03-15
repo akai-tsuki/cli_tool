@@ -14,6 +14,9 @@ jobs:
       - run:
           command: python -m unittest discover
           name: Test
+      - run:
+          command: coverage run --source .\cli_tool\ -m unittest discover
+          name: Coverage
 
 workflows:
   main:
