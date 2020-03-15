@@ -51,6 +51,7 @@ jobs:
       - run:
           command: |
             coverage xml
+            ls -la
             ./cc-test-reporter after-build --exit-code $?
       - persist_to_workspace:
           root: coverage_output
