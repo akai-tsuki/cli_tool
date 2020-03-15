@@ -3,6 +3,25 @@ version: 2.1
 orbs:
   python: circleci/python@0.2.1
 
+commands:
+
+  run-with-coverage:
+    parameters:
+      command:
+        type: string
+    steps:
+      - run:
+          name: "Run Tests"
+          command: |
+            python --version
+            mkdir -p coverage_output
+            export COVERAGE_FILE=coverage_output/.coverage.$CIRCLE_BUILD_NUM
+            << parameters.command >>
+      - persist_to_workspace:
+          root: coverage_output
+          paths:
+            - .coverage.*
+  
 jobs:
   build-and-test:
     executor: python/default
@@ -16,9 +35,31 @@ jobs:
           name: Test
       - run:
           command: |
+            python --version
+            ls -l
+            mkdir -p coverage_output
+            export COVERAGE_FILE=coverage_output/.coverage.$CIRCLE_BUILD_NUM
             sudo pip install coverage
             coverage run --source .cli_tool -m unittest discover
           name: Coverage
+      - persist_to_workspace:
+          root: coverage_output
+          paths:
+            - .coverage.*
+          
+  coverage:
+    docker:
+      - image: circleci/python:3.7
+    steps:
+      - checkout
+      - attach_workspace:
+          at: coverage_output
+      - run:
+          name: "Check coverage"
+          command: |
+            sudo pip install coverage
+            coverage combine coverage_output/
+            coverage report --show-missing --fail-under=100
 
 workflows:
   main:
