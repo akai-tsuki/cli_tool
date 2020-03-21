@@ -10,7 +10,7 @@ class RestClient():
     def __init__(self):
         self.logger = logging.getLogger(__name__)
 
-    def getData(self, num):
+    def get_data(self, num):
         data = ["aaa", "bbb", "ccc"]
 
         ret_value = "not_select"
