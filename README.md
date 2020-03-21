@@ -32,13 +32,13 @@ PS C:\desk\GitHub\cli_tool>
 ### coverage
 
 ```
-PS C:\desk\GitHub\cli_tool> coverage-2.7.exe run --source .\cli_tool\ -m unittest discover
+PS C:\desk\GitHub\cli_tool> coverage-3.8.exe run --source .\cli_tool\ -m unittest discover
 .
 Ran 1 test in 0.000s
 
 OK
 PS C:\desk\GitHub\cli_tool>
-PS C:\desk\GitHub\cli_tool> coverage-2.7.exe report -m 
+PS C:\desk\GitHub\cli_tool> coverage-3.8.exe report -m 
 Name                   Stmts   Miss  Cover   Missing
 ----------------------------------------------------
 cli_tool\__init__.py       0      0   100%
@@ -52,7 +52,7 @@ PS C:\desk\GitHub\cli_tool>
 output xml file.
 
 ```
-PS C:\desk\GitHub\cli_tool> coverage-2.7.exe xml
+PS C:\desk\GitHub\cli_tool> coverage-3.8.exe xml
 ```
 
 ### flake8
@@ -71,13 +71,18 @@ PS C:\desk\GitHub\cli_tool>
 ## Run by python command
 
 ```
-PS C:\desk\GitHub\cli_tool> python.exe .\cli_tool\core.py -a test -b value -n 1
+PS C:\desk\GitHub\cli_tool> python.exe -m cli_tool -a test -b value -n 1
+
 Check args ---
 test
 value
 1
 Start ---
-Hello sample01
+name:cli_tool.core
+name:cli_tool.sample01
+msg: Hello sample01
+value: 3
+output data: bbb
 End ---
 PS C:\desk\GitHub\cli_tool> 
 ```
@@ -93,10 +98,10 @@ PS C:\desk\GitHub\cli_tool> ls dist
     ディレクトリ: C:\desk\GitHub\cli_tool\dist
 
 
-Mode                LastWriteTime         Length Name
-----                -------------         ------ ----
--a----       2020/03/01     15:10           3504 cli_tool-0.1.0.tar.gz
--a----       2020/03/01     15:10           7254 cli_tool-0.1.0.zip
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a---          2020/03/22     2:56           5364 cli_tool-0.1.0.tar.gz
+-a---          2020/03/22     2:56           9462 cli_tool-0.1.0.zip
 
 
 PS C:\desk\GitHub\cli_tool> 
@@ -113,9 +118,9 @@ PS C:\desk\GitHub\cli_tool> ls dist
     ディレクトリ: C:\desk\GitHub\cli_tool\dist
 
 
-Mode                LastWriteTime         Length Name
-----                -------------         ------ ----
--a----       2020/03/07     23:25           3686 cli_tool-0.1.0-py2-none-any.whl
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a---          2020/03/22     2:57           5431 cli_tool-0.1.0-py3-none-any.whl
 
 
 PS C:\desk\GitHub\cli_tool>
@@ -125,6 +130,7 @@ PS C:\desk\GitHub\cli_tool>
 
   https://github.com/kennethreitz/setup.py  
   https://python-packaging-user-guide-ja.readthedocs.io/ja/latest/distributing.html
+  https://techblog.asahi-net.co.jp/entry/2018/06/15/162951#setuppy
 
 
 ## Help of setup.py
