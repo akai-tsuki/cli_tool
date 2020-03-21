@@ -15,7 +15,7 @@ if os.path.isfile(logging_config_filename):
     logging.config.fileConfig(logging_config_filename)
 
 
-def getArg():
+def get_arg():
     parser = argparse.ArgumentParser(
         prog='sample_cli',
         add_help=True
@@ -34,7 +34,7 @@ def getArg():
 
 def main():
 
-    arg_values = getArg()
+    arg_values = get_arg()
     print('Check args ---')
     print(arg_values.arg1)
     print(arg_values.bar)

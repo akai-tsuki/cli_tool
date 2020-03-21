@@ -22,7 +22,7 @@ class Sample01():
 
     def get_rest_data(self, num):
         client = RestClient()
-        data = client.getData(num)
+        data = client.get_data(num)
 
         self.logger.info("data: " + str(data))
 
