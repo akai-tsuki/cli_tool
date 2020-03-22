@@ -43,7 +43,8 @@ class Sample01():
         try:
             data = self.get_rest_data(num)
         except Exception as e:
-            print("error msg: " + str(e.message))
-            return
+            print("error msg: " + str(e.args[0]))
+            return False
         else:
             print("output data: " + str(data))
+            return True

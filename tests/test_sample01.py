@@ -1,5 +1,6 @@
 import unittest
 from cli_tool.sample01 import Sample01
+from unittest.mock import Mock
 
 
 class TestSample01(unittest.TestCase):
@@ -46,6 +47,36 @@ class TestSample01(unittest.TestCase):
         actual = sample.get_rest_data(1)
 
         # check
+        self.assertEqual(expected, actual)
+
+    def test_start(self):
+        """ test method for start """
+
+        # prepare
+        sample = Sample01()
+        sample.get_msg = Mock(return_value="test return msg")
+        expected = True
+
+        # execute
+        actual = sample.start(1)
+
+        # check
+        sample.get_msg.assert_called()
+        self.assertEqual(expected, actual)
+
+    def test_start_error(self):
+        """ test method for start """
+
+        # prepare
+        sample = Sample01()
+        sample.get_msg = Mock(return_value="test return msg")
+        expected = False
+
+        # execute
+        actual = sample.start(3)
+
+        # check
+        sample.get_msg.assert_called()
         self.assertEqual(expected, actual)
 
 
