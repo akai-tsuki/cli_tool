@@ -1,5 +1,6 @@
 import unittest
 from cli_tool.rest_client import RestClient
+from cli_tool.rest_client_exception import RestClientException
 from unittest.mock import Mock, patch
 
 
@@ -26,6 +27,31 @@ def mocked_requests_get(*args, **kwargs):
 class TestRestClient(unittest.TestCase):
     """test class of RestClient
     """
+
+    def test_get_data(self):
+        """ test method for get_data
+        """
+
+        # prepare
+        expected = "aaa"
+        # execute
+        client = RestClient()
+        actual = client.get_data(0)
+
+        # check
+        self.assertEqual(expected, actual)
+
+    def test_get_data_error(self):
+        """ test method for get_data in case of error.
+        """
+
+        # prepare
+        client = RestClient()
+
+        # execute
+        # check
+        with self.assertRaises(RestClientException):
+            client.get_data(4)
 
     @patch("cli_tool.rest_client.requests")
     def test_get_weather(self, mock_requests):
