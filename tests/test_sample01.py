@@ -34,6 +34,20 @@ class TestSample01(unittest.TestCase):
         # check
         self.assertEqual(expected, actual)
 
+    def test_get_data(self):
+        """ test method for get_data
+        """
+
+        # prepare
+        sample = Sample01()
+        expected = "bbb"
+
+        # execute
+        actual = sample.get_rest_data(1)
+
+        # check
+        self.assertEqual(expected, actual)
+
 
 if __name__ == "__main__":
     unittest.main()
