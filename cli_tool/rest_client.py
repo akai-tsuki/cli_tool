@@ -36,6 +36,15 @@ class RestClient():
         print("URL: " + response.url)
         print("Text: " + response.text)
 
-        # list(response.json()[0].keys())
-
         return response.status_code
+
+    def get_greeting(self, name):
+        url = "http://localhost:18080/greeting"
+
+        name = {'name': name}
+        response = requests.get(url, params=name)
+
+        json_data = response.json()
+        print(json_data)
+
+        return json_data["content"]
